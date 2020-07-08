@@ -7,10 +7,9 @@ import { useRouter } from "next/router";
 import axios from "axios";
 import wrapper from "../../store/configureStore";
 import AppLayout from "../../components/layout/AppLayout";
-import { LOAD_MY_INFO_REQUEST } from "../../reducers/user";
 import { LOAD_POST_REQUEST } from "../../reducers/post";
 
-const User = () => {
+const Post = () => {
   const { singlePost } = useSelector((state) => state.post);
   const router = useRouter();
   const { id } = router.query;
@@ -18,26 +17,19 @@ const User = () => {
   return (
     <AppLayout>
       <Head>
-        <title>
-          {singlePost.User.nickname}
-          님의 글
-        </title>
+        <title>{singlePost.title}</title>
         <meta name="description" content={singlePost.content} />
-        <meta
-          property="og:title"
-          content={`${singlePost.User.nickname}님의 게시글`}
-        />
+        <meta property="og:title" content={singlePost.title} />
         <meta property="og:description" content={singlePost.content} />
         <meta
           property="og:image"
-          content={
-            singlePost.Images[0]
-              ? singlePost.Images[0].src
-              : "https://source.unsplash.com/random"
-          }
+          content="https://source.unsplash.com/random"
         />
         <meta property="og:url" content={`http://localhost:3060/post/${id}`} />
       </Head>
+      <div>불러온 게시글 데이터</div>
+      <div>{`제목 : ${singlePost.title}`}</div>
+      <div>{`내용 : ${singlePost.content}`}</div>
     </AppLayout>
   );
 };
@@ -51,18 +43,14 @@ export const getServerSideProps = wrapper.getServerSideProps(
     }
 
     context.store.dispatch({
-      type: LOAD_MY_INFO_REQUEST,
-    });
-    context.store.dispatch({
       type: LOAD_POST_REQUEST,
       data: context.params.id,
     });
 
     context.store.dispatch(END);
     await context.store.sagaTask.toPromise();
-    console.log("getState", context.store.getState().post.mainPosts);
     return { props: {} };
   }
 );
 
-export default User;
+export default Post;
