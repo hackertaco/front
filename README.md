@@ -72,4 +72,4 @@ Git Flow방식을 사용하여 브랜치를 관리한다.
 now
 ```
 
-[배포 URL](https://nodelab.jodmsoluth.vercel.app/)
+[배포 URL](https://nodelab.vercel.app/)
