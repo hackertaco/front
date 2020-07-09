@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "name": "nodelab",
+  "builds": [{ "src": "package.json", "use": "@now/next" }],
+  "env": {
+    "NODE_ENV": "production"
+  }
+}

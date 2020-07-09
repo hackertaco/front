@@ -67,6 +67,7 @@ const reducer = (state = initialState, action) =>
         // draft.loadMyInfoError = action.error;
         break;
       case LOG_IN_REQUEST:
+        console.log("login data", action.data);
         draft.logInLoading = true;
         draft.logInError = null;
         draft.logInDone = false;

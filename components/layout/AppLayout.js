@@ -7,7 +7,7 @@ export default function AppLayout({ children }) {
     <div>
       <div>
         <Link href="/">
-          <a>노드버드</a>
+          <a>헤드 부분</a>
         </Link>
       </div>
       <div>{children}</div>

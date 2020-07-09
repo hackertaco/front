@@ -28,6 +28,7 @@
     "react/jsx-props-no-spreading": "off",
     "comma-dangle": "off",
     "implicit-arrow-linebreak": "off",
-    "operator-linebreak": "off"
+    "operator-linebreak": "off",
+    "indent": "off"
   }
 }

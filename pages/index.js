@@ -4,7 +4,7 @@ import { END } from "redux-saga";
 import axios from "axios";
 import wrapper from "../store/configureStore";
 import AppLayout from "../components/layout/AppLayout";
-import Button from "../components/button/Button";
+import LoginForm from "../components/form/LoginForm";
 
 const Home = () => (
   <>
@@ -13,7 +13,7 @@ const Home = () => (
         <title>Node Lab | 홈</title>
       </Head>
       <div>
-        <Button />
+        <LoginForm />
       </div>
     </AppLayout>
   </>
