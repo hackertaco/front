@@ -1,10 +1,11 @@
-import React from "react";
-import Head from "next/head";
-import { END } from "redux-saga";
 import axios from "axios";
-import wrapper from "../store/configureStore";
-import AppLayout from "../components/layout/AppLayout";
+import Head from "next/head";
+import React from "react";
+import { END } from "redux-saga";
 import LoginForm from "../components/form/LoginForm";
+import AppLayout from "../components/layout/AppLayout";
+import wrapper from "../store/configureStore";
+import Tab from "../components/tab/Tab";
 
 const Home = () => (
   <>
@@ -14,6 +15,7 @@ const Home = () => (
       </Head>
       <div>
         <LoginForm />
+        <Tab></Tab>
       </div>
     </AppLayout>
   </>

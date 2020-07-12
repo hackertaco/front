@@ -10,7 +10,7 @@ export default function AppLayout({ children }) {
       <Normalize />
       <header>
         <Link href="/">
-          <a>헤드 부분</a>
+          <a>헤드ß</a>
         </Link>
       </header>
       <div>{children}</div>
