@@ -5,6 +5,7 @@ import axios from "axios";
 import wrapper from "../store/configureStore";
 import AppLayout from "../components/layout/AppLayout";
 import LoginForm from "../components/form/LoginForm";
+import Badge from "../components/badge/Badge";
 
 const Home = () => (
   <>
@@ -14,6 +15,7 @@ const Home = () => (
       </Head>
       <div>
         <LoginForm />
+        <Badge />
       </div>
     </AppLayout>
   </>
