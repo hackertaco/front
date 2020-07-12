@@ -1,17 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Link from "next/link";
+import "../../util/util.module.scss";
+import { Normalize } from 'styled-normalize'
 
 export default function AppLayout({ children }) {
   return (
-    <div>
-      <div>
+    <>
+      <Normalize />
+      <header>
         <Link href="/">
           <a>헤드 부분</a>
         </Link>
-      </div>
+      </header>
       <div>{children}</div>
-    </div>
+    </>
   );
 }
 
